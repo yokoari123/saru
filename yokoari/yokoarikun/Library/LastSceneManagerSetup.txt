@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/yokeru.unity
+- path: Assets/scene/taitle.unity
   isLoaded: 1
   isActive: 1
