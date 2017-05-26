@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fda5a34b754387e44b81eee2d955cbc5
+timeCreated: 1495761704
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - player_item: {instanceID: 0}
+  - item2: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
