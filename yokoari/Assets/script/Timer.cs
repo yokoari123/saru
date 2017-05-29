@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -17,14 +16,19 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        stop();
+    }
+    void stop()
+    {
         time -= Time.deltaTime;
         PlayerPrefs.SetFloat(kye, time);
         if (time < 0)
         {
             GameOverText.SetActive(true);
+            PlayerPrefs.DeleteKey(kye);
         }
         if (time < 0) time = 0;
         GetComponent<Text>().text = ((int)time).ToString();
-        //PlayerPrefs.DeleteKey(kye);
+
     }
 }
