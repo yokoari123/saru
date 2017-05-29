@@ -4,32 +4,59 @@ using UnityEngine;
 
 public class move_up : MonoBehaviour
 {
+    public CSpawn cspawn;
 
-    public float m_enemy_Speed;               //落下速度
-    public float m_speed_Random_min = 0.1f;   //落下速度のランダム最小値
-    public float m_speed_Random_max = 0.3f;   //落下速度のランダム最大値
-                                              //public float out_scen;
-    private float m_spawn_X;
-    public float m_spawn_Random_min = 0.0f;
-    public float m_spawn_Random_max = 5.0f;
+    private float m_enemy_Speed;                           //落下速度
+    public float m_speed_Random_min;                       //落下速度のランダム最小値
+    public float m_speed_Random_max;                       //落下速度のランダム最大値
+
+    public float m_spawn_Xrandom_min;                     //ランダムスポーンのx最小値
+    public float m_spawn_Xrandom_max;                     //ランダムスポーンのx最大値
+
+    public float m_spawn_Yrandom_min;                     //ランダムスポーンのy最小値
+    public float m_spawn_Yrandom_max;                     //ランダムスポーンのy最大値
+
+    //public float m_h = Screen.height;                      //シーンの高さ
+    //public float m_w = Screen.width;                       //シーンの幅
+
+    bool m_enemyflg = true;
+    float m_enemyCnt = 0;
+
+
+    void OnTriggerEnter2D(Collider2D hit)
+    {
+        m_enemyflg = false;
+    }
 
     void Start()
     {
-        //transform.rotation = Quaternion.Euler(0, 180, 0);// オブジェクトの向きを上下反転させる
-        //Debug.Log("a");
-        m_enemy_Speed = Random.Range(m_speed_Random_min, m_speed_Random_max);
-        m_spawn_X = Random.Range(m_spawn_Random_min, m_spawn_Random_max);
-        Vector2 m_spawn_Pos = new Vector2(m_spawn_X, 0);
+
     }
 
     void Update()
     {
-        Vector3 pos = transform.position;
 
-        if (pos.y <= -10)
+        m_enemy_Speed = Random.Range(m_speed_Random_min, m_speed_Random_max);
+
+
+        if (m_enemyflg == true)
         {
-            //Destroy(gameObject);//画面を出たら削除
+            transform.position += new Vector3(0, m_enemy_Speed, 0);
         }
-        transform.position += new Vector3(0, m_enemy_Speed, 0);
+        else if (m_enemyflg == false)
+        {
+            m_enemyCnt++;
+            if (m_enemyCnt == 50)
+            {
+                m_enemyflg = true;
+                m_enemyCnt = 0;
+            }
+        }
+
+        if (transform.position.y >= 10)
+        {
+            Destroy(gameObject);
+        }
     }
+
 }

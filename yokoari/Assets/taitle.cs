@@ -49,7 +49,15 @@ public class taitle : MonoBehaviour {
         Vector2 m_playerPos = GameObject.Find("player").transform.position;
 
         //Debug.Log(m_playerPos);
-        
+
+        /*
+                if (m_heigth_min < m_playerPos.y)
+                {
+
+                    SceneManager.LoadScene("omise");
+
+                }
+        */
 
         if (m_heigth_min > m_playerPos.y)
         {

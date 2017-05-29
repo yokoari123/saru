@@ -23,13 +23,13 @@ public class omise : MonoBehaviour
         if (m_heigth_min > m_playerPos.y)
         {
 
-            SceneManager.LoadScene("system");
+            SceneManager.LoadScene("taitle");
 
         }
-        if (m_heigth_max <= m_playerPos.y)
+        if (m_heigth_max < m_playerPos.y)
         {
 
-            SceneManager.LoadScene("taitle");
+            SceneManager.LoadScene("system2");
 
         }
     }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class item : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class item : MonoBehaviour
             {
                 player_item.SItem(itemID);
                 
-                // エネミーの削除
+                // アイテム削除
                 Destroy(gameObject);
 
             }
