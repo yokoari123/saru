@@ -5,14 +5,21 @@ public class item2 : MonoBehaviour
     public GameObject[] Train;
     public int number;
 
+    //public GameObject item;
+    //public CState cstate;
+
+
+
     void Start()
     {
-       
-        number = Random.Range(0, Train.Length);
+        //item = GameObject.Find("Item");
+        //cstate = item.GetComponent<CState>();
 
-        Instantiate(Train[number], transform.position, transform.rotation);
+            number = Random.Range(0, Train.Length);
 
-        Debug.Log(number);
+            Instantiate(Train[number], transform.position, transform.rotation);
+
+            Debug.Log(number);
     }
 
 

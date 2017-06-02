@@ -8,8 +8,12 @@ public class CState : MonoBehaviour {
 
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        if(item_state == false)DontDestroyOnLoad(transform.gameObject);
+    }
 
+    // Use this for initialization
+    void Start () {
+              
         if (item_state == false)
         {
             item_state = true;
@@ -21,13 +25,8 @@ public class CState : MonoBehaviour {
 
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
